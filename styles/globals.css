@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+/* html,
 body {
   background-color: #202225;
   padding: 0;
   margin: 0;
-}
+} */
 
 a {
   color: inherit;
@@ -16,4 +16,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@layer components {
+  .custom-container {
+    @apply w-full px-[100px] 2xl:max-w-[1440px] 2xl:mx-auto !important;
+  }
 }

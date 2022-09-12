@@ -7,7 +7,7 @@ import { CgProfile } from 'react-icons/cg'
 import { MdOutlineAccountBalanceWallet } from 'react-icons/md'
 
 const style = {
-  wrapper: `bg-[#04111d] w-screen px-[1.2rem] py-[0.8rem] flex `,
+  wrapper: `bg-[#04111d] w-screen px-[1.2rem] py-[0.8rem] flex 2xl:max-w-[1440px] 2xl:mx-auto`,
   logoContainer: `flex items-center cursor-pointer`,
   logoText: ` ml-[0.8rem] text-white font-semibold text-2xl`,
   searchBar: `flex flex-1 mx-[0.8rem] w-max-[520px] items-center bg-[#363840] rounded-[0.8rem] hover:bg-[#4c505c]`,
@@ -23,8 +23,9 @@ const Header = () => {
     <div className={style.wrapper}>
       <Link href="/">
         <div className={style.logoContainer}>
-          <Image src={openseaLogo} height={40} width={40} />
-          <div className={style.logoText}>Opensea</div>
+          {/* <Image src={openseaLogo} height={40} width={40} /> */}
+          <div className="h-12 w-12 rounded-full bg-blue-500 text-lg text-white font-extrabold grid place-content-center"><span>H</span></div>
+          <div className={style.logoText}>Humat NFT</div>
         </div>
       </Link>
       <div className={style.searchBar}>
