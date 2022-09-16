@@ -2,6 +2,12 @@ import React from 'react';
 import Slider from 'react-slick'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import collectible from '../assets/images/Collectible-items.png';
+import artwork from '../assets/images/Artwork.png';
+import eventTickets from '../assets/images/Event-Tickets.png';
+import musicAndMedia from '../assets/images/NFT-Music.png';
+import gaming  from '../assets/images/Gaming.png';
+import sport   from '../assets/images/Big-Sport-Moments.png';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 
 const NotableDrop = () => {
@@ -13,6 +19,14 @@ const NotableDrop = () => {
   //   slidesToScroll: 1
   // };
   const arr = [1,2,3,4,5,6,7,8,9,10,11,12]
+  const carouselData = [
+    {id:1, cat: 'Collectible', img: 'https://justcreative.com/wp-content/uploads/2022/02/Collectible-items.png'},
+    {id:2, cat: 'Artwork', img: 'https://justcreative.com/wp-content/uploads/2022/02/Artwork.png'},
+    {id:3, cat: 'Event Tickets', img: 'https://justcreative.com/wp-content/uploads/2022/02/Event-Tickets.png'},
+    {id:4, cat: 'Music and media', img: 'https://justcreative.com/wp-content/uploads/2022/02/NFT-Music.png'},
+    {id:5, cat: 'Gaming ', img: 'https://justcreative.com/wp-content/uploads/2022/02/Gaming.png' },
+    {id:6, cat: 'Sport ', img: 'https://justcreative.com/wp-content/uploads/2022/02/Big-Sport-Moments.png' },
+  ]
   let slideCount = 1;
   return (
     <div>
@@ -27,7 +41,7 @@ const NotableDrop = () => {
           focus : 'center',
         }} aria-label="My Favorite Images">
 
-          <SplideSlide className='bg-white grid place-content-center h-52'>
+          {/* <SplideSlide className='bg-white grid place-content-center h-52'>
             <span className='text-3xl font-bold'>{slideCount++}</span>
           </SplideSlide>
           <SplideSlide className='bg-white grid place-content-center h-52'>
@@ -44,7 +58,16 @@ const NotableDrop = () => {
           </SplideSlide>
           <SplideSlide className='bg-white grid place-content-center h-52'>
             <span className='text-3xl font-bold'>{slideCount++}</span>
-          </SplideSlide>
+          </SplideSlide> */}
+
+          {
+            carouselData?.map(item=>(
+              <SplideSlide className='block relative h-52 cursor-pointer'>
+                <img className='w-full h-full' src={item.img} alt="" />
+                <p className='absolute w-full bottom-0 left-0 p-2 bg-gradient-to-t from-gray-800'><span className='text-xl font-bold text-white'>{item?.cat}</span></p>
+              </SplideSlide>
+            ))
+          }
           
         </Splide>
       </section>
