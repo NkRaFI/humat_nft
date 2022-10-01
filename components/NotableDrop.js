@@ -6,8 +6,8 @@ import collectible from '../assets/images/Collectible-items.png';
 import artwork from '../assets/images/Artwork.png';
 import eventTickets from '../assets/images/Event-Tickets.png';
 import musicAndMedia from '../assets/images/NFT-Music.png';
-import gaming  from '../assets/images/Gaming.png';
-import sport   from '../assets/images/Big-Sport-Moments.png';
+import gaming from '../assets/images/Gaming.png';
+import sport from '../assets/images/Big-Sport-Moments.png';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 
 const NotableDrop = () => {
@@ -18,27 +18,27 @@ const NotableDrop = () => {
   //   slidesToShow: 1,
   //   slidesToScroll: 1
   // };
-  const arr = [1,2,3,4,5,6,7,8,9,10,11,12]
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   const carouselData = [
-    {id:1, cat: 'Collectible', img: 'https://justcreative.com/wp-content/uploads/2022/02/Collectible-items.png'},
-    {id:2, cat: 'Artwork', img: 'https://justcreative.com/wp-content/uploads/2022/02/Artwork.png'},
-    {id:3, cat: 'Event Tickets', img: 'https://justcreative.com/wp-content/uploads/2022/02/Event-Tickets.png'},
-    {id:4, cat: 'Music and media', img: 'https://justcreative.com/wp-content/uploads/2022/02/NFT-Music.png'},
-    {id:5, cat: 'Gaming ', img: 'https://justcreative.com/wp-content/uploads/2022/02/Gaming.png' },
-    {id:6, cat: 'Sport ', img: 'https://justcreative.com/wp-content/uploads/2022/02/Big-Sport-Moments.png' },
+    { id: 1, cat: 'Collectible', img: 'https://justcreative.com/wp-content/uploads/2022/02/Collectible-items.png' },
+    { id: 2, cat: 'Artwork', img: 'https://justcreative.com/wp-content/uploads/2022/02/Artwork.png' },
+    { id: 3, cat: 'Event Tickets', img: 'https://justcreative.com/wp-content/uploads/2022/02/Event-Tickets.png' },
+    { id: 4, cat: 'Music and media', img: 'https://justcreative.com/wp-content/uploads/2022/02/NFT-Music.png' },
+    { id: 5, cat: 'Gaming ', img: 'https://justcreative.com/wp-content/uploads/2022/02/Gaming.png' },
+    { id: 6, cat: 'Sport ', img: 'https://justcreative.com/wp-content/uploads/2022/02/Big-Sport-Moments.png' },
   ]
   let slideCount = 1;
   return (
     <div>
       <section className="custom-container bg-blue-500 py-12">
         <Splide options={{
-          type   : 'loop',
+          type: 'loop',
           padding: '20%',
           perPage: 3,
           perMove: 1,
           padding: { left: '10%', right: '10%' },
           gap: '1rem',
-          focus : 'center',
+          focus: 'center',
         }} aria-label="My Favorite Images">
 
           {/* <SplideSlide className='bg-white grid place-content-center h-52'>
@@ -61,14 +61,14 @@ const NotableDrop = () => {
           </SplideSlide> */}
 
           {
-            carouselData?.map(item=>(
+            carouselData?.map(item => (
               <SplideSlide key={item.id} className='block relative h-52 cursor-pointer'>
                 <img className='w-full h-full' src={item.img} alt="" />
                 <p className='absolute w-full bottom-0 left-0 p-2 bg-gradient-to-t from-gray-800'><span className='text-xl font-bold text-white'>{item?.cat}</span></p>
               </SplideSlide>
             ))
           }
-          
+
         </Splide>
       </section>
       <section className='custom-container mt-28 px-8'>
@@ -119,8 +119,8 @@ const NotableDrop = () => {
             </div>
           </div> */}
           {
-            arr.map((item, index)=>(
-              <div key={index} className="col-span-4 row-span-1 rounded-md p-2 hover:shadow-md hover:bg-gray-50">
+            arr.map((item, index) => (
+              <div key={index} className="col-span-4 row-span-1 rounded-md p-2 hover:shadow-md hover:bg-gray-50 dark:bg-[#363840]">
                 <div className="grid grid-cols-12 items-center">
                   <div className='col-span-3 flex gap-2 items-center'>
                     <span className='col-span-1 text-[20px]'>{++index}</span>
@@ -163,7 +163,7 @@ const NotableDrop = () => {
             </div>
             <p className='text-xl font-semibold'>Create your collection</p>
             <p className='text-lg'>Click My Collections and set up your collection. Add social links, a description, profile & banner images, and set a secondary sales fee.</p>
-            
+
           </div>
           <div className="col-span-3 text-center grid gap-3">
             <div className='flex justify-center'>
@@ -171,7 +171,7 @@ const NotableDrop = () => {
             </div>
             <p className='text-xl font-semibold'>Add your NFTs</p>
             <p className='text-lg'>Upload your work (image, video, audio, or 3D art), add a title and description, and customize your NFTs with properties, stats, and unlockable content.</p>
-            
+
           </div>
           <div className="col-span-3 text-center grid gap-3">
             <div className='flex justify-center'>
@@ -184,33 +184,33 @@ const NotableDrop = () => {
       </section>
 
       <section className='custom-container mt-36 mb-10'>
-          <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
-            <div className="col-span-4 rounded-md shadow-lg overflow-hidden">
-              <img className='w-full border-b' src="https://blogmigration.kinsta.cloud/wp-content/uploads/2022/02/image-13-300x200.png" alt="" />
-              <div className="bg-white px-3 py-5 ">
-                <p className="text-lg font-semibold">How to Easily Setup a MetaMask Wallet</p>
-              </div>
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
+          <div className="col-span-4 rounded-md shadow-lg overflow-hidden">
+            <img className='w-full border-b' src="https://blogmigration.kinsta.cloud/wp-content/uploads/2022/02/image-13-300x200.png" alt="" />
+            <div className="bg-white px-3 py-5 ">
+              <p className="text-lg font-semibold">How to Easily Setup a MetaMask Wallet</p>
             </div>
-            <div className="col-span-4 rounded-md shadow-lg overflow-hidden">
-              <img className='w-full border-b' src="https://blogmigration.kinsta.cloud/wp-content/uploads/2022/02/76edde93ea6402d5818fbc03767aeda0-300x200.jpg" alt="" />
-              <div className="bg-white px-3 py-5 ">
-                <p className="text-lg font-semibold">How to Fund MetaMask with ETH</p>
-              </div>
-            </div>
-            <div className="col-span-4 rounded-md shadow-lg overflow-hidden">
-              <img className='w-full border-b' src="https://blogmigration.kinsta.cloud/wp-content/uploads/2022/01/image-10-300x200.png" alt="" />
-              <div className="bg-white px-3 py-5 ">
-                <p className="text-lg font-semibold">How to Find an NFT You Love</p>
-              </div>
-            </div>
-            
           </div>
+          <div className="col-span-4 rounded-md shadow-lg overflow-hidden">
+            <img className='w-full border-b' src="https://blogmigration.kinsta.cloud/wp-content/uploads/2022/02/76edde93ea6402d5818fbc03767aeda0-300x200.jpg" alt="" />
+            <div className="bg-white px-3 py-5 ">
+              <p className="text-lg font-semibold">How to Fund MetaMask with ETH</p>
+            </div>
+          </div>
+          <div className="col-span-4 rounded-md shadow-lg overflow-hidden">
+            <img className='w-full border-b' src="https://blogmigration.kinsta.cloud/wp-content/uploads/2022/01/image-10-300x200.png" alt="" />
+            <div className="bg-white px-3 py-5 ">
+              <p className="text-lg font-semibold">How to Find an NFT You Love</p>
+            </div>
+          </div>
+
+        </div>
       </section>
-      
+
       {/* <footer className='custom-container bg-blue-500 h-72 mt-28 py-5'>
         <h3 className='text-3xl font-extrabold text-white tracking-wider'>HUMAT NFT</h3>
       </footer> */}
-      
+
     </div>
   );
 };
