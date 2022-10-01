@@ -7,6 +7,7 @@ import { useWeb3 } from '@3rdweb/hooks'
 import { useEffect } from 'react'
 import { client } from '../lib/sanityClient'
 import toast, { Toaster } from 'react-hot-toast'
+import Footer from '../components/Footer'
 
 const style = {
   wrapper: `overflow-hidden`,
@@ -55,6 +56,7 @@ export default function Home() {
           {/* <Hero /> */}
           <Hero2 />
           <NotableDrop />
+          <Footer />
         </>
       ) : (
         <div className={style.walletConnectWrapper}>

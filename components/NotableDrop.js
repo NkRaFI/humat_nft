@@ -207,9 +207,9 @@ const NotableDrop = () => {
           </div>
       </section>
       
-      <footer className='custom-container bg-blue-500 h-72 mt-28 py-5'>
+      {/* <footer className='custom-container bg-blue-500 h-72 mt-28 py-5'>
         <h3 className='text-3xl font-extrabold text-white tracking-wider'>HUMAT NFT</h3>
-      </footer>
+      </footer> */}
       
     </div>
   );

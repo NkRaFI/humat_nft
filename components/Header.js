@@ -24,7 +24,9 @@ const Header = () => {
       <Link href="/">
         <div className={style.logoContainer}>
           {/* <Image src={openseaLogo} height={40} width={40} /> */}
-          <div className="h-12 w-12 rounded-full bg-blue-500 text-lg text-white font-extrabold grid place-content-center"><span>H</span></div>
+          <div className="grid h-12 w-12 place-content-center rounded-full bg-blue-500 text-lg font-extrabold text-white">
+            <span>H</span>
+          </div>
           <div className={style.logoText}>Humat NFT</div>
         </div>
       </Link>
