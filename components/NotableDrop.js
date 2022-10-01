@@ -62,7 +62,7 @@ const NotableDrop = () => {
 
           {
             carouselData?.map(item=>(
-              <SplideSlide className='block relative h-52 cursor-pointer'>
+              <SplideSlide key={item.id} className='block relative h-52 cursor-pointer'>
                 <img className='w-full h-full' src={item.img} alt="" />
                 <p className='absolute w-full bottom-0 left-0 p-2 bg-gradient-to-t from-gray-800'><span className='text-xl font-bold text-white'>{item?.cat}</span></p>
               </SplideSlide>
@@ -72,7 +72,7 @@ const NotableDrop = () => {
         </Splide>
       </section>
       <section className='custom-container mt-28 px-8'>
-        <h3 className='text-center text-3xl font-semibold mb-8'>Notable Drops</h3>
+        <h3 className='text-center text-3xl font-semibold mb-8 dark:text-white'>Notable Drops</h3>
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-5">
           <div className='col-span-4 cursor-pointer relative rounded-xl overflow-hidden'>
             <img src='https://openseauserdata.com/static/promocards/CloudWalker.png' alt="" />
@@ -99,7 +99,7 @@ const NotableDrop = () => {
       </section>
 
       <section className='custom-container mt-36 px-8'>
-        <h3 className='text-center text-3xl font-semibold mb-12'>Top collections over <span className='text-blue-600'>last 24 hours</span></h3>
+        <h3 className='text-center text-3xl font-semibold mb-12'><span className='dark:text-white'>Top collections over</span> <span className='text-blue-600'>last 24 hours</span></h3>
         <div className="grid grid-cols-1 xl:grid-cols-12 grid-rows-4 gap-x-3 divide-y">
 
           {/* <div className="col-span-4 bg-gray-700 text-white rounded-md p-2">
@@ -120,7 +120,7 @@ const NotableDrop = () => {
           </div> */}
           {
             arr.map((item, index)=>(
-              <div className="col-span-4 row-span-1 rounded-md p-2 hover:shadow-md hover:bg-gray-50">
+              <div key={index} className="col-span-4 row-span-1 rounded-md p-2 hover:shadow-md hover:bg-gray-50">
                 <div className="grid grid-cols-12 items-center">
                   <div className='col-span-3 flex gap-2 items-center'>
                     <span className='col-span-1 text-[20px]'>{++index}</span>

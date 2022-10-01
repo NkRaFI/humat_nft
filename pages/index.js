@@ -46,6 +46,11 @@ export default function Home() {
     })()
   }, [address])
 
+  useEffect(()=>{
+    const html = document.getElementsByTagName('html')
+    html[0].classList.add('dark')
+  }, [])
+
   return (
     <div className={style.wrapper}>
       <Toaster position="top-center" reverseOrder={false} />
