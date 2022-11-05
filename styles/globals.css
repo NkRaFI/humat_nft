@@ -23,3 +23,9 @@ a {
     @apply w-full px-[100px] 2xl:max-w-[1440px] 2xl:mx-auto !important;
   }
 }
+
+.nextui-dropdown-button{
+  background: blue !important;
+  width: 250px !important;
+  color: #ffffff;
+}

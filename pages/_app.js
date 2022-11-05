@@ -1,5 +1,7 @@
 import '../styles/globals.css'
 import { ThirdwebWeb3Provider } from '@3rdweb/hooks'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 /**
  * The chain ID 4 represents the Rinkeby network
@@ -16,7 +18,9 @@ function MyApp({ Component, pageProps }) {
       supportedChainIds={supportedChainIds}
       connectors={connectors}
     >
+      <Header />
       <Component {...pageProps} />
+      <Footer />
     </ThirdwebWeb3Provider>
   )
 }

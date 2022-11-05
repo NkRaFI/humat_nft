@@ -1,5 +1,5 @@
 import Header from '../../components/Header'
-import { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useWeb3 } from '@3rdweb/hooks'
 import { ThirdwebSDK } from '@3rdweb/sdk'
 import { useRouter } from 'next/router'
@@ -7,9 +7,12 @@ import NFTImage from '../../components/nft/NFTImage'
 import GeneralDetails from '../../components/nft/GeneralDetails'
 import ItemActivity from '../../components/nft/ItemActivity'
 import Purchase from '../../components/nft/Purchase'
+import {BsEyeFill, BsFillHeartFill} from "react-icons/bs";
+import {Button, Card, Checkbox, Input} from "@nextui-org/react";
+import SelectedDropdown from "../../components/Dropdown";
 
 const style = {
-  wrapper: `flex flex-col items-center container-lg text-[#e5e8eb]`,
+  wrapper: `flex flex-col items-center container-lg `,
   container: `container p-6`,
   topContent: `flex`,
   nftImgContainer: `flex-1 mr-4`,
@@ -17,70 +20,73 @@ const style = {
 }
 
 const Nft = () => {
-  const { provider } = useWeb3()
-  const [selectedNft, setSelectedNft] = useState()
-  const [listings, setListings] = useState([])
-  const router = useRouter()
-
-  const nftModule = useMemo(() => {
-    if (!provider) return
-
-    const sdk = new ThirdwebSDK(
-      provider.getSigner(),
-      'https://rinkeby.infura.io/v3/a464b9152d8c466c8a94a514fce8e837'
-    )
-    return sdk.getNFTModule('0x66a576A977b7Bccf510630E0aA5e450EC11361Fa')
-  }, [provider])
-
-  // get all NFTs in the collection
-  useEffect(() => {
-    if (!nftModule) return
-    ;(async () => {
-      const nfts = await nftModule.getAll()
-
-      const selectedNftItem = nfts.find((nft) => nft.id === router.query.nftId)
-
-      setSelectedNft(selectedNftItem)
-    })()
-  }, [nftModule])
-
-  const marketPlaceModule = useMemo(() => {
-    if (!provider) return
-
-    const sdk = new ThirdwebSDK(
-      provider.getSigner(),
-      'https://rinkeby.infura.io/v3/a464b9152d8c466c8a94a514fce8e837'
-    )
-
-    return sdk.getMarketplaceModule(
-      '0x93A771F7ce845C33381f677489cF21a5964EDD0b'
-    )
-  }, [provider])
-
-  useEffect(() => {
-    if (!marketPlaceModule) return
-    ;(async () => {
-      setListings(await marketPlaceModule.getAllListings())
-    })()
-  }, [marketPlaceModule])
-
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <div className={style.wrapper}>
         <div className={style.container}>
           <div className={style.topContent}>
             <div className={style.nftImgContainer}>
-              <NFTImage selectedNft={selectedNft} />
+              <NFTImage selectedNft={`https://images.unsplash.com/photo-1667222448667-f786c1e91c88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80`} />
             </div>
             <div className={style.detailsContainer}>
-              <GeneralDetails selectedNft={selectedNft} />
-              <Purchase
-                isListed={router.query.isListed}
-                selectedNft={selectedNft}
-                listings={listings}
-                marketPlaceModule={marketPlaceModule}
-              />
+              <SelectedDropdown />
+              <div className={`my-5 flex gap-3 items-center`}>
+                <div className={`dark:text-white`}>Total</div>
+                <Input  bordered  initialValue="" />
+              </div>
+              <div className="flex items-center mb-4">
+                <input id="default-checkbox" type="checkbox" value=""
+                       className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                  <label htmlFor="default-checkbox"
+                         className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Confirm</label>
+              </div>
+              {/*<Purchase*/}
+              {/*  isListed={router.query.isListed}*/}
+              {/*  selectedNft={selectedNft}*/}
+              {/*  listings={listings}*/}
+              {/*  marketPlaceModule={marketPlaceModule}*/}
+              {/*/>*/}
+            </div>
+          </div>
+          <div className={`row mt-4 dark:text-white`}>
+            <div className={`lg:col-8`}>
+              <h2 className={`text-[28px] font-bold`}>You #190</h2>
+              <p className={"mt-4"}><span className={`font-bold`}>Rank:</span>8,851 / 10,000</p>
+              <div className={`mt-4 flex gap-20`}>
+                <div>Owned by <a href="#" className={`text-[18px] font-bold text-blue-600`}>Humat NFT</a></div>
+                <div className={`flex items-center gap-3`}>
+                  <div><BsEyeFill fontSize={20}/></div>
+                  <div className={`text-[18px] font-bold`}>7 favorites</div>
+                </div>
+                <div className={`flex items-center gap-3`}>
+                  <div><BsFillHeartFill fontSize={20} /></div>
+                  <div className={`text-[18px] font-bold`}>7 favorites</div>
+                </div>
+              </div>
+              <div className="row mt-10 ">
+                <div className="lg:col-8">
+                  <div className={`text-[18px] mb-10`}>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eaque et ipsam molestias mollitia odit ratione recusandae vero voluptates voluptatum!
+                  </div>
+                  <div className={``}>
+                    <Card
+                        isPressable
+                        isHoverable
+                        variant="bordered"
+                        css={{ mw: "400px" }}
+                    >
+                      <Card.Header>
+                        Best Offer
+                      </Card.Header>
+                      <Card.Body>
+                        <h2 className={`font-bold text-[25px]`}>087144 USD</h2>
+                        <Button className={`bg-blue-600 mt-2`} color={"primary"} size="xl">Make offer</Button>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <ItemActivity />

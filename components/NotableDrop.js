@@ -33,7 +33,6 @@ const NotableDrop = () => {
       <section className="custom-container bg-blue-500 py-12">
         <Splide options={{
           type: 'loop',
-          padding: '20%',
           perPage: 3,
           perMove: 1,
           padding: { left: '10%', right: '10%' },
@@ -183,7 +182,7 @@ const NotableDrop = () => {
         </div>
       </section>
 
-      <section className='custom-container mt-36 mb-10'>
+      <section className='custom-container mt-36 mb-10 dark:text-black'>
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
           <div className="col-span-4 rounded-md shadow-lg overflow-hidden">
             <img className='w-full border-b' src="https://blogmigration.kinsta.cloud/wp-content/uploads/2022/02/image-13-300x200.png" alt="" />

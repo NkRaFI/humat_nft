@@ -2,7 +2,7 @@ import { IoMdSnow } from 'react-icons/io'
 import { AiOutlineHeart } from 'react-icons/ai'
 
 const style = {
-  topBar: `bg-[#303339] p-2 rounded-t-lg border-[#151c22] border`,
+  topBar: `bg-[#303339] p-2 rounded-t-lg border-[#151c22] border text-white`,
   topBarContent: `flex items-center`,
   likesCounter: `flex-1 flex items-center justify-end`,
 }
@@ -20,8 +20,7 @@ const NFTImage = ({ selectedNft }) => {
         </div>
       </div>
       <div>
-        {console.log(selectedNft, '🎆')}
-        <img src={selectedNft?.image} />
+        <img height="100px" src="https://cdn.pixabay.com/photo/2022/01/17/17/20/bored-6945309_960_720.png" />
       </div>
     </div>
   )

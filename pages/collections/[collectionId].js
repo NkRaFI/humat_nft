@@ -107,11 +107,9 @@ const Collection = () => {
     fetchCollectionData()
   }, [collectionId])
 
-  console.log(router.query)
-  console.log(router.query.collectionId)
   return (
     <div className="overflow-hidden">
-      <Header />
+      {/* <Header /> */}
       <div className={style.bannerImageContainer}>
         <img
           className={style.bannerImage}

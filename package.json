@@ -8,6 +8,7 @@
   "dependencies": {
     "@3rdweb/hooks": "^1.8.0",
     "@3rdweb/sdk": "^1.36.11",
+    "@nextui-org/react": "^1.0.0-beta.10",
     "@sanity/client": "^2.23.2",
     "@splidejs/react-splide": "^0.7.10",
     "next": "latest",

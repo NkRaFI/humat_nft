@@ -47,21 +47,23 @@ export default function Home() {
     })()
   }, [address])
 
-  useEffect(()=>{
+  useEffect(() => {
     const html = document.getElementsByTagName('html')
     html[0].classList.add('dark')
   }, [])
 
   return (
     <div className={style.wrapper}>
-      <Toaster position="top-center" reverseOrder={false} />
-      {address ? (
+      <Toaster position="top-center" reverseOrder={false} />!
+      {!address ? (
         <>
-          <Header />
+          {/* <Header /> */}
           {/* <Hero /> */}
           <Hero2 />
-          <NotableDrop />
-          <Footer />
+          <div className="dark:text-white">
+            <NotableDrop />
+          </div>
+          {/* <Footer /> */}
         </>
       ) : (
         <div className={style.walletConnectWrapper}>

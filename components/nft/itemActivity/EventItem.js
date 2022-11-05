@@ -22,7 +22,7 @@ const EventItem = ({ event }) => {
       </div>
       <div className={`${style.eventPrice} flex-[2]`}>
         <img
-          src="https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg"
+          src="https://cdn.pixabay.com/photo/2022/01/17/17/20/bored-6945309_960_720.png"
           alt="eth"
           className={style.ethLogo}
         />
