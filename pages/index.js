@@ -49,7 +49,7 @@ export default function Home() {
 
   useEffect(() => {
     const html = document.getElementsByTagName('html')
-    html[0].classList.add('dark')
+    html[0].classList.add('dark','bg-black')
   }, [])
 
   return (
