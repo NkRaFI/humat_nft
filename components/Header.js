@@ -21,14 +21,15 @@ const style = {
 const Header = () => {
   const [isLight, setIsLight] = useState(false)
   const handleDarkModeToggle =()=>{
-    setIsLight(!isLight)
+    let is_dark = localStorage.getItem('nft_dark') ?? "";
     const html = document.getElementsByTagName('html')
-    if(isLight){
-      html[0].classList.remove('dark')
-      html[0].classList.remove('bg-black')
-    }
-    if(!isLight){
+    if(is_dark){
       html[0].classList.add('dark')
+      html[0].classList.add('bg-black')
+      localStorage.setItem("nft_dark","yes");
+    }else{
+      html[0].classList.add('dark')
+      localStorage.removeItem("nft_dark");
       html[0].classList.add('bg-black')
     }
   }

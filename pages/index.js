@@ -47,9 +47,17 @@ export default function Home() {
     })()
   }, [address])
 
+
   useEffect(() => {
+    if(typeof window !== "undefined"){
+      let is_dark = localStorage.getItem("nft_dark") ?? "";
+    }
     const html = document.getElementsByTagName('html')
-    html[0].classList.add('dark','bg-black')
+    if(is_dark === "yes"){
+      html[0].classList.add('dark','bg-black')
+    }else{
+
+    }
   }, [])
 
   return (

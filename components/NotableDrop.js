@@ -2,12 +2,13 @@ import React from 'react';
 import Slider from 'react-slick'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import collectible from '../assets/images/Collectible-items.png';
-import artwork from '../assets/images/Artwork.png';
-import eventTickets from '../assets/images/Event-Tickets.png';
-import musicAndMedia from '../assets/images/NFT-Music.png';
-import gaming from '../assets/images/Gaming.png';
-import sport from '../assets/images/Big-Sport-Moments.png';
+import Link from "next/link"
+// import collectible from '../assets/images/Collectible-items.png';
+// import artwork from '../assets/images/Artwork.png';
+// import eventTickets from '../assets/images/Event-Tickets.png';
+// import musicAndMedia from '../assets/images/NFT-Music.png';
+// import gaming from '../assets/images/Gaming.png';
+// import sport from '../assets/images/Big-Sport-Moments.png';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 
 const NotableDrop = () => {
@@ -62,8 +63,12 @@ const NotableDrop = () => {
           {
             carouselData?.map(item => (
               <SplideSlide key={item.id} className='block relative h-52 cursor-pointer'>
-                <img className='w-full h-full' src={item.img} alt="" />
-                <p className='absolute w-full bottom-0 left-0 p-2 bg-gradient-to-t from-gray-800'><span className='text-xl font-bold text-white'>{item?.cat}</span></p>
+                <Link href={`nfts/${item.id}`}>
+                  <a>
+                    <img className='w-full h-full' src={item.img} alt="" />
+                    <p className='absolute w-full bottom-0 left-0 p-2 bg-gradient-to-t from-gray-800'><span className='text-xl font-bold text-white'>{item?.cat}</span></p>
+                  </a>
+                </Link>
               </SplideSlide>
             ))
           }
@@ -74,21 +79,32 @@ const NotableDrop = () => {
         <h3 className='text-center text-3xl font-semibold mb-8 dark:text-white'>Notable Drops</h3>
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-5">
           <div className='col-span-4 cursor-pointer relative rounded-xl overflow-hidden'>
-            <img src='https://openseauserdata.com/static/promocards/CloudWalker.png' alt="" />
+           <Link href={`nfts/{1}`}>
+             <a >
+               <img src='https://openseauserdata.com/static/promocards/CloudWalker.png' alt="" />
+             </a>
+           </Link>
+          </div>
+          <div className='col-span-4 cursor-pointer relative rounded-xl overflow-hidden'>
+            <Link href={`nfts/{1}`}>
+              <a>
+                <img src='https://openseauserdata.com/static/promocards/LAConfidential.png' alt="" />
+              </a>
+            </Link>
+
             {/* <div className='absolute bottom-0 left-0 w-full text-white bg-gradient-to-b bg-black/[0.5] py-2 px-3'>
               <p className='text-2xl font-semibold mb-2'>AI Labs Cloud Walkers</p>
               <p className='text-xl'>333 Cloud Walkers</p>
             </div> */}
           </div>
+
           <div className='col-span-4 cursor-pointer relative rounded-xl overflow-hidden'>
-            <img src='https://openseauserdata.com/static/promocards/LAConfidential.png' alt="" />
-            {/* <div className='absolute bottom-0 left-0 w-full text-white bg-gradient-to-b bg-black/[0.5] py-2 px-3'>
-              <p className='text-2xl font-semibold mb-2'>AI Labs Cloud Walkers</p>
-              <p className='text-xl'>333 Cloud Walkers</p>
-            </div> */}
-          </div>
-          <div className='col-span-4 cursor-pointer relative rounded-xl overflow-hidden'>
-            <img src='https://openseauserdata.com/static/promocards/clonex_promocard3_squooshed.jpg' alt="" />
+            <Link href={`nfts/{1}`}>
+              <a>
+                <img src='https://openseauserdata.com/static/promocards/clonex_promocard3_squooshed.jpg' alt="" />
+              </a>
+            </Link>
+
             {/* <div className='absolute bottom-0 left-0 w-full text-white bg-gradient-to-b bg-black/[0.5] py-2 px-3'>
               <p className='text-2xl font-semibold mb-2'>AI Labs Cloud Walkers</p>
               <p className='text-xl'>333 Cloud Walkers</p>

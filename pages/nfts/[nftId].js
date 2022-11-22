@@ -30,7 +30,9 @@ const Nft = () => {
               <NFTImage selectedNft={`https://images.unsplash.com/photo-1667222448667-f786c1e91c88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80`} />
             </div>
             <div className={style.detailsContainer}>
-              <SelectedDropdown />
+              <div className={`w-1/2`}>
+                <SelectedDropdown />
+              </div>
               <div className={`my-5 flex gap-3 items-center`}>
                 <div className={`dark:text-white`}>Total</div>
                 <Input  bordered  initialValue="" />
