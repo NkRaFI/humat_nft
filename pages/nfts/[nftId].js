@@ -1,16 +1,18 @@
-import Header from '../../components/Header'
+// import Header from '../../components/Header'
 import React, { useEffect, useMemo, useState } from 'react'
-import { useWeb3 } from '@3rdweb/hooks'
-import { ThirdwebSDK } from '@3rdweb/sdk'
-import { useRouter } from 'next/router'
+// import { useWeb3 } from '@3rdweb/hooks'
+// import { ThirdwebSDK } from '@3rdweb/sdk'
+// import { useRouter } from 'next/router'
 import NFTImage from '../../components/nft/NFTImage'
-import GeneralDetails from '../../components/nft/GeneralDetails'
+// import GeneralDetails from '../../components/nft/GeneralDetails'
 import ItemActivity from '../../components/nft/ItemActivity'
-import Purchase from '../../components/nft/Purchase'
+// import Purchase from '../../components/nft/Purchase'
 import {BsEyeFill, BsFillHeartFill} from "react-icons/bs";
-import {Button, Card, Checkbox, Input} from "@nextui-org/react";
+import {Button, Card, Checkbox, Dropdown, Input} from "@nextui-org/react";
 import SelectedDropdown from "../../components/Dropdown";
-
+import {BsThreeDots} from "react-icons/bs"
+import {AiFillFlag, AiFillSignal} from "react-icons/ai";
+import {MdNotificationsActive} from "react-icons/md";
 const style = {
   wrapper: `flex flex-col items-center container-lg `,
   container: `container p-6`,
@@ -59,15 +61,23 @@ const Nft = () => {
                 <div>Owned by <a href="#" className={`text-[18px] font-bold text-blue-600`}>Humat NFT</a></div>
                 <div className={`flex items-center gap-3`}>
                   <div><BsEyeFill fontSize={20}/></div>
-                  <div className={`text-[18px] font-bold`}>7 favorites</div>
+                  <div className={`text-[18px] font-bold`}>117 Watch</div>
                 </div>
                 <div className={`flex items-center gap-3`}>
                   <div><BsFillHeartFill fontSize={20} /></div>
                   <div className={`text-[18px] font-bold`}>7 favorites</div>
                 </div>
+                <Dropdown>
+                  <Dropdown.Trigger>
+                    <div className={style.headerItem}> <BsThreeDots size={30} /> </div>
+                  </Dropdown.Trigger>
+                  <Dropdown.Menu color="">
+                    <Dropdown.Item className={``} color="default" icon={<AiFillFlag size={`18px`} color={`#000`} />} key="report"><span className={`font-semibold`}>Report</span></Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </div>
               <div className="row mt-10 ">
-                <div className="lg:col-8">
+                <div className="lg:col-10">
                   <div className={`text-[18px] mb-10`}>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eaque et ipsam molestias mollitia odit ratione recusandae vero voluptates voluptatum!
                   </div>

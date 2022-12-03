@@ -16,7 +16,7 @@ const NFT = () => {
           <div>Owned by <a href="#" className={`text-[18px] font-bold text-blue-600`}>Humat NFT</a></div>
           <div className={`flex items-center gap-3`}>
               <div><BsEyeFill fontSize={20}/></div>
-              <div className={`text-[18px] font-bold`}>7 favorites</div>
+              <div className={`text-[18px] font-bold`}>7 Watch</div>
           </div>
           <div className={`flex items-center gap-3`}>
               <div><BsFillHeartFill fontSize={20} /></div>
@@ -155,7 +155,6 @@ const NFT = () => {
                   </p>
               </div>
           </div>
-
       </div>
   </div>
 }

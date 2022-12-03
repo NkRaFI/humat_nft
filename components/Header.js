@@ -5,7 +5,10 @@ import openseaLogo from '../assets/opensea.png'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { CgProfile } from 'react-icons/cg'
 import { MdOutlineAccountBalanceWallet } from 'react-icons/md'
-
+import { Dropdown } from "@nextui-org/react";
+import {AiOutlineHeart,AiOutlineUser,AiOutlineEye,AiFillSignal} from "react-icons/ai"
+import {BsGrid3X3, BsGear, BsFillMoonStarsFill, BsSun} from "react-icons/bs"
+import {MdNotificationsActive} from "react-icons/md"
 const style = {
   wrapper: `dark:bg-[#04111d] w-screen px-[1.2rem] py-[0.8rem] flex 2xl:max-w-[1440px] 2xl:mx-auto`,
   logoContainer: `flex items-center cursor-pointer`,
@@ -57,13 +60,43 @@ const Header = () => {
         <Link href="/collections/0x66a576A977b7Bccf510630E0aA5e450EC11361Fa">
           <div className={style.headerItem}> Collections </div>
         </Link>
-        <div className={style.headerItem}> Stats </div>
-        <div className={style.headerItem}> Resources </div>
+        <Dropdown>
+            <Dropdown.Trigger>
+                <div className={style.headerItem}> Stats </div>
+            </Dropdown.Trigger>
+            <Dropdown.Menu color="">
+                <Dropdown.Item className={`mb-4`} color="default" icon={<AiFillSignal size={`18px`} color={`#000`} />} key="learn"><span className={`font-semibold`}>Rank</span></Dropdown.Item>
+                <Dropdown.Item className={``} color="default" icon={<MdNotificationsActive size={`18px`} color={`#000`} />} key="favorites"><span className={`font-semibold`}>Activity</span></Dropdown.Item>
+            </Dropdown.Menu>
+        </Dropdown>
+       <Dropdown>
+           <Dropdown.Trigger>
+               <div className={style.headerItem}> Resources </div>
+           </Dropdown.Trigger>
+           <Dropdown.Menu color="">
+                <Dropdown.Item className={`mb-4`} color="default" icon={<AiOutlineUser size={`18px`} color={`#000`} />} key="learn"><span className={`font-semibold`}>Learn</span></Dropdown.Item>
+                <Dropdown.Item className={`mb-4`} color="default" icon={<AiOutlineHeart size={`18px`} color={`#000`} />} key="favorites"><span className={`font-semibold`}>Favorites</span></Dropdown.Item>
+                <Dropdown.Item className={`mb-4`} color="default" icon={<AiOutlineEye size={`18px`} color={`#000`} />} key="watchlist"><span className={`font-semibold`}>Watchlist</span></Dropdown.Item>
+                <Dropdown.Item className={`mb-4`} color="default" icon={<BsGrid3X3 size={`18px`} color={`#000`} />} key="collection"><span className={`font-semibold`}>My Collection</span></Dropdown.Item>
+                <Dropdown.Item className={``} color="default" icon={<BsGear size={`18px`} color={`#000`} />} key="settings"><span className={`font-semibold`}>Settings</span></Dropdown.Item>
+           </Dropdown.Menu>
+       </Dropdown>
         <div className={style.headerItem}> Create </div>
-        <div className={style.headerItem} onClick={handleDarkModeToggle}> Dark/Light</div>
-        <div className={style.headerIcon}>
-          <CgProfile />
-        </div>
+          <Dropdown>
+              <Dropdown.Trigger>
+                  <div className={style.headerIcon}>
+                      <CgProfile />
+                  </div>
+              </Dropdown.Trigger>
+              <Dropdown.Menu color="">
+                  <Dropdown.Item className={`mb-4`} color="default" icon={<AiOutlineUser size={`18px`} color={`#000`} />} key="learn"><span className={`font-semibold`}>Profile</span></Dropdown.Item>
+                  <Dropdown.Item className={`mb-4`} color="default" icon={<AiOutlineHeart size={`18px`} color={`#000`} />} key="favorites"><span className={`font-semibold`}>Favorites</span></Dropdown.Item>
+                  <Dropdown.Item className={`mb-4`} color="default" icon={<AiOutlineEye size={`18px`} color={`#000`} />} key="watchlist"><span className={`font-semibold`}>Watchlist</span></Dropdown.Item>
+                  <Dropdown.Item className={`mb-4`} color="default" icon={<BsGrid3X3 size={`18px`} color={`#000`} />} key="collection"><span className={`font-semibold`}>My Collection</span></Dropdown.Item>
+                  <Dropdown.Item className={`mb-4`} color="default" icon={<BsGear size={`18px`} color={`#000`} />} key="settings"><span className={`font-semibold`}>Settings</span></Dropdown.Item>
+                  <Dropdown.Item icon={<BsSun size={`18px`} color={`#000`} />}><div className={style.headerItem} onClick={handleDarkModeToggle}><span className={`font-semibold text-black`}> Dark/Light</span></div></Dropdown.Item>
+              </Dropdown.Menu>
+          </Dropdown>
         <div className={style.headerIcon}>
           <MdOutlineAccountBalanceWallet />
         </div>
