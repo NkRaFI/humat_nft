@@ -1,6 +1,6 @@
 import React from "react";
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import { CssBaseline } from "@nextui-org/react";
+import Document, {Html, Head, Main, NextScript} from "next/document";
+import {CssBaseline} from "@nextui-org/react";
 
 class MyDocument extends Document {
     static async getInitialProps(ctx) {
@@ -14,10 +14,17 @@ class MyDocument extends Document {
     render() {
         return (
             <Html lang="en">
-                <Head>{CssBaseline.flush()}</Head>
+                <Head>
+                    {CssBaseline.flush()}
+                    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+                    <link
+                        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+                        rel="stylesheet"/>
+                </Head>
                 <body>
-                <Main />
-                <NextScript />
+                <Main/>
+                <NextScript/>
                 </body>
             </Html>
         );

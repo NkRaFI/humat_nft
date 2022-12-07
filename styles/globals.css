@@ -9,27 +9,35 @@ body {
   margin: 0;
 } */
 
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 @layer components {
-  .custom-container {
-    @apply w-full px-[100px] 2xl:max-w-[1440px] 2xl:mx-auto !important;
-  }
+    .custom-container {
+        @apply w-full px-[100px] 2xl:max-w-[1440px] 2xl:mx-auto !important;
+    }
 }
 
-.nextui-dropdown-button{
-  background: blue !important;
-  width: 250px !important;
-  color: #ffffff;
+.nextui-dropdown-button {
+    background: blue !important;
+    width: 250px !important;
+    color: #ffffff;
 }
 
-.nextui-c-kpzpMf-kIthQh-isActive-true{
-  background: #ffffff;
+.nextui-c-kpzpMf-kIthQh-isActive-true {
+    background: #ffffff;
 }

@@ -201,19 +201,19 @@ const NotableDrop = () => {
       <section className='custom-container mt-36 mb-10 dark:text-black'>
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
           <div className="col-span-4 rounded-md shadow-lg overflow-hidden">
-            <img className='w-full border-b' src="https://blogmigration.kinsta.cloud/wp-content/uploads/2022/02/image-13-300x200.png" alt="" />
+            <img className='w-full border-b' src="https://picsum.photos/id/4/200/200" alt="" />
             <div className="bg-white px-3 py-5 ">
               <p className="text-lg font-semibold">How to Easily Setup a MetaMask Wallet</p>
             </div>
           </div>
           <div className="col-span-4 rounded-md shadow-lg overflow-hidden">
-            <img className='w-full border-b' src="https://blogmigration.kinsta.cloud/wp-content/uploads/2022/02/76edde93ea6402d5818fbc03767aeda0-300x200.jpg" alt="" />
+            <img className='w-full border-b' src="https://picsum.photos/id/1/200/200" alt="" />
             <div className="bg-white px-3 py-5 ">
               <p className="text-lg font-semibold">How to Fund MetaMask with ETH</p>
             </div>
           </div>
           <div className="col-span-4 rounded-md shadow-lg overflow-hidden">
-            <img className='w-full border-b' src="https://blogmigration.kinsta.cloud/wp-content/uploads/2022/01/image-10-300x200.png" alt="" />
+            <img className='w-full border-b' src="https://picsum.photos/id/2/200/200" alt="" />
             <div className="bg-white px-3 py-5 ">
               <p className="text-lg font-semibold">How to Find an NFT You Love</p>
             </div>
