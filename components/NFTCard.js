@@ -19,17 +19,16 @@ const style = {
   likeIcon: `text-xl mr-2`,
 }
 
-const NFTCard = ({ nftItem, title, listings }) => {
-  const [isListed, setIsListed] = useState(false)
-  const [price, setPrice] = useState(0)
+const NFTCard = ({ nftItem, title, listings,price }) => {
+  const [isListed, setIsListed] = useState(true)
 
-  useEffect(() => {
-    const listing = listings.find((listing) => listing.asset.id === nftItem.id)
-    if (Boolean(listing)) {
-      setIsListed(true)
-      setPrice(listing.buyoutCurrencyValuePerToken.displayValue)
-    }
-  }, [listings, nftItem])
+  // useEffect(() => {
+  //   const listing = listings.find((listing) => listing.asset.id === nftItem.id)
+  //   if (Boolean(listing)) {
+  //     setIsListed(true)
+  //     setPrice(listing.buyoutCurrencyValuePerToken.displayValue)
+  //   }
+  // }, [listings, nftItem])
 
   return (
     <div
@@ -42,7 +41,7 @@ const NFTCard = ({ nftItem, title, listings }) => {
       }}
     >
       <div className={style.imgContainer}>
-        <img src={nftItem.image} alt={nftItem.name} className={style.nftImg} />
+        <img c src={nftItem.image} alt={nftItem.name} className={[style.nftImg,'hover:'].join(' ')} />
       </div>
       <div className={style.details}>
         <div className={style.info}>
@@ -55,7 +54,7 @@ const NFTCard = ({ nftItem, title, listings }) => {
               <div className={style.priceTag}>Price</div>
               <div className={style.priceValue}>
                 <img
-                  src="https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg"
+                  src="https://www.svgrepo.com/show/353715/ethereum.svg"
                   alt="eth"
                   className={style.ethLogo}
                 />

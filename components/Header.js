@@ -9,6 +9,7 @@ import {Dropdown} from "@nextui-org/react";
 import {AiOutlineHeart, AiOutlineUser, AiOutlineEye, AiFillSignal} from "react-icons/ai"
 import {BsGrid3X3, BsGear, BsFillMoonStarsFill, BsSun, BsFillMoonFill} from "react-icons/bs"
 import {MdNotificationsActive} from "react-icons/md"
+import {FaPlay} from "react-icons/fa"
 import useDarkMode from "../hooks/useDarkMood";
 
 const style = {
@@ -23,6 +24,43 @@ const style = {
     headerIcon: `text-gray-600 dark:text-[#8a939b] text-3xl font-black px-4 dark:hover:text-white cursor-pointer`,
 }
 
+let category = [
+    {
+        id: 1,
+        text: "Art",
+        image: "https://picsum.photos/id/1006/300/300"
+    },
+    {
+        id: 2,
+        text: "Music",
+        image: "https://picsum.photos/id/1008/300/300"
+    },
+    {
+        id: 3,
+        text: "Sports",
+        image: "https://picsum.photos/id/1009/300/300"
+    },
+    {
+        id: 4,
+        text: "Collectibles",
+        image: "https://picsum.photos/id/1010/300/300"
+    },
+    {
+        id: 5,
+        text: "Domains",
+        image: "https://picsum.photos/id/1002/300/300"
+    },
+    {
+        id: 6,
+        text: "Virtual Worlds",
+        image: "https://picsum.photos/id/6/300/300"
+    },
+
+]
+
+const handleCategoryRedirect = (id) => {
+    alert(id)
+}
 const Header = () => {
     const [colorTheme, setTheme] = useDarkMode();
     return (
@@ -47,6 +85,22 @@ const Header = () => {
                 />
             </div>
             <div className={style.headerItems}>
+                <div className={`dropdown_wrapper `}>
+                    <div className={`dropdown_icon_wrapper`}>
+                        <FaPlay  />
+                    </div>
+                    <div className={style.headerItem}>Category</div>
+                    <div className={`dropdown_element dark:bg-[#04111d] bg-white`}>
+                        {category?.map((item, index) => {
+                            return (
+                                <div onClick={()=>handleCategoryRedirect(item.id)} className={`dropdown_item`}>
+                                    <img src={item.image} alt={item.text}/>
+                                    <p className={`dark:text-white text-black`}>{item.text}</p>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
                 <Link href="/collections/">
                     <div className={style.headerItem}> Collections</div>
                 </Link>
@@ -108,10 +162,12 @@ const Header = () => {
                                        key="settings"><span className={`font-semibold`}>Settings</span></Dropdown.Item>
 
                         {colorTheme === "light" ? <Dropdown.Item icon={<BsFillMoonFill size={`18px`} color={`#000`}/>}>
-                            <div onClick={()=>setTheme("light")} className={style.headerItem}><span className={`font-semibold text-black`}>Light</span>
+                            <div onClick={() => setTheme("light")} className={style.headerItem}><span
+                                className={`font-semibold text-black`}>Light</span>
                             </div>
                         </Dropdown.Item> : <Dropdown.Item icon={<BsSun size={`18px`} color={`#000`}/>}>
-                            <div onClick={()=>setTheme("dark")} className={style.headerItem}><span className={`font-semibold text-black`}>Dark</span>
+                            <div onClick={() => setTheme("dark")} className={style.headerItem}><span
+                                className={`font-semibold text-black`}>Dark</span>
                             </div>
                         </Dropdown.Item>}
                     </Dropdown.Menu>

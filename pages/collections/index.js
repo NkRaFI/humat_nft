@@ -10,6 +10,7 @@ import {Button, Dropdown, Text} from "@nextui-org/react";
 import Link from "next/link";
 import SelectedDropdown from "../../components/Dropdown";
 import NftImage from "../../components/nft-image/nft-image";
+import NFTCard from "../../components/NFTCard";
 const Collection = () => {
 
     let collection = [
@@ -47,14 +48,7 @@ const Collection = () => {
     if (collection.length) {
         renderCollection = collection.map((item, index) => {
             return (
-                <div className={`lg:col-3`} key={index}>
-                    <img
-                        src={item.image}
-                        className="hover:scale-105 ease-in duration-300 object-fit:cover"
-                        width={350}
-                        height={270}
-                    />
-                </div>
+                <NFTCard key={index} nftItem={item} title={item.name} price={item.price}/>
             )
         })
     }
@@ -127,16 +121,16 @@ const Collection = () => {
                 <div className={``}>
                     <SelectedDropdown hide={true}/>
                 </div>
-                <div className={`sort`}>
+                <div className={`sort `}>
                     <Button.Group color={`red`} size="md" bordered>
                         <Button>
-                            <AiOutlineBars/>
+                            <AiOutlineBars className={`dark:text-white text:black`}/>
                         </Button>
                         <Button>
-                            <BsGrid3X3/>
+                            <BsGrid3X3 className={`dark:text-white text:black`}/>
                         </Button>
-                        <Button><BsGrid/></Button>
-                        <Button><BsGrid1X2/></Button>
+                        <Button><BsGrid className={`dark:text-white text:black`}/></Button>
+                        <Button><BsGrid1X2 className={`dark:text-white text:black`}/></Button>
 
                     </Button.Group>
                 </div>
@@ -147,7 +141,7 @@ const Collection = () => {
                 </div>
             </div>
             {/*    collection start*/}
-            <div className={`row mt-5`}>
+            <div className={`flex flex-wrap mt-5`}>
                 {renderCollection}
             </div>
             {/*    collection end*/}
